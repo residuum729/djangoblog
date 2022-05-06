@@ -11,18 +11,17 @@
         <h3>Autor: residuum729</h3>
         <h4>Wszelkie prawa zastrzeżone</h4>    
     </div>
+
+    {% comment "Komentarz autora" %}
+    <p>Tutaj lista postów</p>
+    {% endcomment %}
+
+    {% for post in posts %}
     <div>
-        <p>To jest akapit</p>
-        <em>To jest wyróżniony tekst</em><br>
-        <strong>Tu jest pogrubiony tekst</strong><br>
-        <a href="https://www.onet.pl/">LINK</a>
+        <p>Opublikowany: {{ post.publish_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <em>{{ post.text|linebreaksbr }}</em>
     </div>
-    <div>
-        <ul>
-            <li>Elementy listy</li>
-            <li>Elementy listy</li>
-            <li>Elementy listy</li>
-        </ul>
-    </div>
+    {% endfor %}
 </body>
 </html>
